@@ -19,5 +19,12 @@
     "status": "todo",
     "createdAt": "2024-10-14T08:56:53.100Z",
     "updatedAt": "2024-10-14T08:56:53.101Z"
+  },
+  {
+    "id": "d1031962-31e3-42b0-b1d8-1d0a39a109db",
+    "description": "pregar quadro na parede",
+    "status": "todo",
+    "createdAt": "2024-10-23T23:22:40.254Z",
+    "updatedAt": "2024-10-23T23:22:40.254Z"
   }
 ]
