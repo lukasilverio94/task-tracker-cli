@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const FILE_PATH = path.join(__dirname, "tasks.json");
 
 // Read tasks from JSON file
-function readTasks() {
+function readTasksFromJSON() {
   if (!fs.existsSync(FILE_PATH)) {
     return [];
   }
@@ -35,7 +35,7 @@ function generateId(tasks) {
 
 // add new task
 function addTask(description) {
-  const tasks = readTasks();
+  const tasks = readTasksFromJSON();
   const newTask = {
     id: generateId(tasks),
     description: description,
@@ -51,7 +51,7 @@ function addTask(description) {
 
 // update task
 function updateTask(id, newDescription) {
-  const tasks = readTasks();
+  const tasks = readTasksFromJSON();
   const task = tasks.find((t) => t.id === id);
   if (!task) {
     console.log(`Task with ID ${id} not found`);
@@ -66,7 +66,7 @@ function updateTask(id, newDescription) {
 
 // delete task
 function deleteTask(id) {
-  let tasks = readTasks();
+  let tasks = readTasksFromJSON();
   const initialLenght = tasks.length;
   tasks = tasks.filter((t) => t.id !== id);
 
@@ -90,7 +90,7 @@ function markDone(id) {
 
 // Update Task Status (done or in progress)
 function updateTaskStatus(id, status) {
-  const tasks = readTasks();
+  const tasks = readTasksFromJSON();
   const task = tasks.find((t) => t.id === id);
   if (!task) {
     console.log(`Task with (ID: ${id}) not found`);
@@ -105,7 +105,7 @@ function updateTaskStatus(id, status) {
 
 // List Tasks
 function listTasks(filter = null) {
-  const tasks = readTasks();
+  const tasks = readTasksFromJSON();
   let filteredTasks = tasks;
 
   if (filter === "done") {
